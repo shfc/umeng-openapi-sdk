@@ -135,26 +135,26 @@ type GetAppCountResp struct {
 
 type GetChannelDataResp struct {
 	ChannelInfos []struct {
-		Duration      string `json:"duration"`
-		Date          string `json:"date"`
-		ActiveUser    int    `json:"activeUser"`
-		NewUser       int    `json:"newUser"`
-		TotalUser     int    `json:"totalUser"`
-		Channel       string `json:"channel"`
-		Launch        int    `json:"launch"`
-		ID            string `json:"id"`
-		TotalUserRate string `json:"totalUserRate"`
+		Duration      string  `json:"duration"`
+		Date          string  `json:"date"`
+		ActiveUser    int     `json:"activeUser"`
+		NewUser       int     `json:"newUser"`
+		TotalUser     int     `json:"totalUser"`
+		Channel       string  `json:"channel"`
+		Launch        int     `json:"launch"`
+		ID            string  `json:"id"`
+		TotalUserRate float64 `json:"totalUserRate"`
 	} `json:"channelInfos"`
 }
 
 type GetVersionDataResp struct {
 	VersionInfos []struct {
-		Date          string `json:"date"`
-		ActiveUser    int    `json:"activeUser"`
-		NewUser       int    `json:"newUser"`
-		TotalUser     int    `json:"totalUser"`
-		Version       string `json:"version"`
-		TotalUserRate string `json:"totalUserRate"`
+		Date          string  `json:"date"`
+		ActiveUser    int     `json:"activeUser"`
+		NewUser       int     `json:"newUser"`
+		TotalUser     int     `json:"totalUser"`
+		Version       string  `json:"version"`
+		TotalUserRate float64 `json:"totalUserRate"`
 	} `json:"versionInfos"`
 }
 
