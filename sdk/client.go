@@ -97,7 +97,7 @@ func (cli *UmengClient) Do(method UmengAPI, params url.Values) (respDeco *json.D
 	}
 	for k, vals := range params {
 		for _, v := range vals {
-			formData.Add(k, v)
+			formData.Add(k, url.QueryEscape(v))
 		}
 	}
 	if method.NeedSign() {
@@ -124,10 +124,10 @@ func (cli *UmengClient) Do(method UmengAPI, params url.Values) (respDeco *json.D
 	}
 	if !(res.StatusCode >= 200 && res.StatusCode < 400) {
 		errMsg := sdkErr.Err{}
-		if err:=json.NewDecoder(res.Body).Decode(&errMsg);err!=nil{
-			return nil,err
+		if err := json.NewDecoder(res.Body).Decode(&errMsg); err != nil {
+			return nil, err
 		}
-		return nil, errors.New(fmt.Sprintf("request failed, statusCode %v, %v", res.StatusCode,errMsg))
+		return nil, errors.New(fmt.Sprintf("request failed, statusCode %v, %v", res.StatusCode, errMsg))
 	}
 	return json.NewDecoder(res.Body), nil
 }
