@@ -201,9 +201,9 @@ type EventListResp struct {
 
 type GetRetentionsResp struct {
 	RetentionInfo []struct {
-		Date             string `json:"date"`
-		TotalInstallUser int    `json:"totalInstallUser"`
-		RetentionRate    string `json:"retentionRate"`
+		Date             string    `json:"date"`
+		TotalInstallUser int       `json:"totalInstallUser"`
+		RetentionRate    []float64 `json:"retentionRate"`
 	} `json:"retentionInfo"`
 }
 
@@ -213,6 +213,7 @@ type GetDurationsResp struct {
 		Value   int    `json:"value"`
 		Percent string `json:"percent"`
 	} `json:"durationInfos"`
+	Average float64 `json:"average"`
 }
 
 type GetLaunchesResp struct {
