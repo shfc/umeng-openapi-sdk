@@ -124,8 +124,8 @@ type GetTodayDataResp struct {
 
 type EventGetUniqueUsersResp struct {
 	UniqueUsers []struct {
-		Data  string `json:"data"`
-		Dates string `json:"dates"`
+		Data  []int64 `json:"data"`
+		Dates string  `json:"dates"`
 	} `json:"uniqueUsers"`
 }
 
@@ -175,8 +175,8 @@ type EventParamGetValueListResp struct {
 
 type EventGetDataResp struct {
 	EventData []struct {
-		Data  string `json:"data"`
-		Dates string `json:"dates"`
+		Data  []int64 `json:"data"`
+		Dates string  `json:"dates"`
 	} `json:"eventData"`
 }
 
@@ -266,7 +266,7 @@ type GetDailyDataResp struct {
 type GetAppListResp struct {
 	AppInfos []struct {
 		CreatedAt  string `json:"createdAt"`
-		UseGameSdk string `json:"useGameSdk"`
+		UseGameSdk bool   `json:"useGameSdk"`
 		Name       string `json:"name"`
 		Appkey     string `json:"appkey"`
 		Category   string `json:"category"`
